@@ -5,9 +5,9 @@ from django.db import models
 class Entidad(models.Model):
     """Representa un departamento u otra institución
     de la Universidad"""
-    codigo = models.CharField()
-    nombre = models.CharField()
-    direccion = models.CharField()
+    codigo = models.CharField(max_length = 10)
+    nombre = models.CharField(max_length = 60)
+    direccion = models.CharField(max_length = 120)
 
     def __unicode__(self):
         return self.nombre
@@ -15,7 +15,7 @@ class Entidad(models.Model):
 class Materia(models.Model):
     """Identifica una materia"""
     codigo = models.CharField(max_length = 6, primary_key = True)
-    nombre = models.CharField()
+    nombre = models.CharField(max_length = 50)
     departamento = models.ForeignKey(Entidad)
 
     def __unicode__(self): 
@@ -24,15 +24,15 @@ class Materia(models.Model):
 class Profesor(models.Model):
     """Contiene los datos de un profesor registrado en el 
     sistema"""
-    cedula = models.CharField(max_length = 9, primary_key = True)
-    nombre = models.CharField()
-    telefono = models.CharField()
-    email = models.CharField()
-    oficina = models.CharField()
+    cedula = models.IntegerField(primary_key = True)
+    nombre = models.CharField(max_length = 50)
+    telefono = models.IntegerField()
+    email = models.EmailField()
+    oficina = models.CharField(max_length = 50)
     departamento = models.ForeignKey(Entidad)
     
     def __unicode__(self):
-        return self.nombre + '/' + self.departamento
+        return u'%s/%s' % (self.nombre, self.departamento)
 
 class Encargado(models.Model):
     """Contiene la información sobre el encargado de un curso.
