@@ -1,4 +1,4 @@
-# Django settings for reserva project.
+# Django settings for reserva_ac project.
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
@@ -14,7 +14,7 @@ DATABASE_NAME = 'sistemas'             # Or path to database file if using sqlit
 DATABASE_USER = 'sys_user'             # Not used with sqlite3.
 DATABASE_PASSWORD = 'ixixn3nd'         # Not used with sqlite3.
 DATABASE_HOST = 'localhost'             # Set to empty string for localhost. Not used with sqlite3.
-DATABASE_PORT = ''             # Set to empty string for default. Not used with sqlite3.
+DATABASE_PORT = '5433'             # Set to empty string for default. Not used with sqlite3.
 
 # Local time zone for this installation. Choices can be found here:
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
@@ -25,7 +25,7 @@ TIME_ZONE = 'America/Caracas'
 
 # Language code for this installation. All choices can be found here:
 # http://www.i18nguy.com/unicode/language-identifiers.html
-LANGUAGE_CODE = 'es-VE'
+LANGUAGE_CODE = 'en-VE'
 
 SITE_ID = 1
 
@@ -48,7 +48,7 @@ MEDIA_URL = ''
 ADMIN_MEDIA_PREFIX = '/media/'
 
 # Make this unique, and don't share it with anybody.
-SECRET_KEY = ')wup$g@mj3gcs-_27ua8ywhz3u$-p2v-@vy%660_(u&u8flvgx'
+SECRET_KEY = '%oniw3kld^u)!3ikd^-3rwgva*i6zkq-vi%@h($3yfx46%4gr%'
 
 # List of callables that know how to import templates from various sources.
 TEMPLATE_LOADERS = (
@@ -76,6 +76,8 @@ INSTALLED_APPS = (
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.sites',
-    'sistemas.universidad',
-    'sistemas.salas',
+    'reserva.universidad',    
+    'reserva.reporte_bug',
+    'reserva.reservas',
+    'reserva.salas',
 )
